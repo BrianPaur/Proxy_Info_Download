@@ -28,7 +28,6 @@ class FolderCreator:
             return folders
         except:
             print(f"no {self.filename} file found")
-            close = int(input("press enter to close"))
 
             os.chdir(f"{self.dir}logs/")
             logging.basicConfig(filename=f"{datetime.now().strftime('[%m_%d_%Y_%H_%M_%S]')}_folder_creator.log",encoding='utf-8', level=logging.INFO)
@@ -46,7 +45,7 @@ class FolderCreator:
                 else:
                     path = os.path.join(self.dir, items)
                     os.mkdir(path)
-            print(f'folder list successfully created/updated')
+            return "folder list successfully created/updated"
             
             os.chdir(f"{self.dir}logs/")
             logging.basicConfig(filename=f"{datetime.now().strftime('[%m_%d_%Y_%H_%M_%S]')}_folder_creator.log",
@@ -54,14 +53,14 @@ class FolderCreator:
             logging.info(f"{datetime.now().strftime('[%m_%d_%Y_%H_%M_%S]')} folder list successfully created/updated")
 
         except:
-            print('unable to create/update folders')
+            return "unable to create/update folders"
             
             os.chdir(f"{self.dir}logs/")
             logging.basicConfig(filename=f"{datetime.now().strftime('[%m_%d_%Y_%H_%M_%S]')}_folder_creator.log",
                                 encoding='utf-8', level=logging.INFO)
             logging.info(f"{datetime.now().strftime('[%m_%d_%Y_%H_%M_%S]')} unable to create/update folders")
             
-            close = int(input("press enter to close"))
+
 
 
 

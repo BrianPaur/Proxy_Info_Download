@@ -28,45 +28,44 @@ if __name__ == '__main__':
     ##### Creates folders based on company names in file defined ####################
     #################################################################################
 
-    a = FolderCreator('ID',
-                  'C:/Users/bpaur/Desktop/test/')
-    a.write_folder()
+    # FolderCreator('PET8C.csv',
+    #               'C:/Users/bpaur/Desktop/test/').write_folder()
 
     #################################################################################
     ##### Downloads Glass Lewis research and saves in correct folder ################
     #################################################################################
 
-    b = GlassLewis('C:/Users/bpaur/Downloads/',
-                   'C:/Users/bpaur/Desktop/test/',
-                   'ID.csv')
-
-    b.ISIN_to_list()
-    b.data_frames()
-    b.pull_down_reports()
+    # b = GlassLewis('C:/Users/bpaur/Downloads/',
+    #                'C:/Users/bpaur/Desktop/test/',
+    #                'PET8C.csv')
+    #
+    # b.ISIN_to_list()
+    # b.data_frames()
+    # b.pull_down_reports()
 
     #################################################################################
     ##### Downloads ProxyEdge ballot and saves in correct folder ####################
     #################################################################################
 
-    c = MeetingBallotDownload('ID',
-                              'C:/Users/bpaur/Downloads/',
-                              'C:/Users/bpaur/Desktop/test/')
-
-    c.comp_name_to_list()
-    c.data_frames()
-    c.meeting_ballot_download()
+    # c = MeetingBallotDownload('PET8C',
+    #                           'C:/Users/bpaur/Downloads/',
+    #                           'C:/Users/bpaur/Desktop/test/')
+    #
+    # c.comp_name_to_list()
+    # c.data_frames()
+    # c.meeting_ballot_download()
 
     #################################################################################
     ##### Downloads ProxyEdge pdf ballot and saves in correct folder ################
     #################################################################################
 
-    d = MeetingPDFBallotDownload('ID',
-                                   'C:/Users/bpaur/Downloads/',
-                                   'C:/Users/bpaur/Desktop/test/')
-
-    d.comp_name_to_list()
-    d.data_frames()
-    d.meeting_voted_ballot_download()
+    # d = MeetingPDFBallotDownload('PET8C',
+    #                                'C:/Users/bpaur/Downloads/',
+    #                                'C:/Users/bpaur/Desktop/test/')
+    #
+    # d.comp_name_to_list()
+    # d.data_frames()
+    # d.meeting_voted_ballot_download()
 
 
 
