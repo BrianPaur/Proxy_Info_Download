@@ -7,7 +7,6 @@ from glasslewis import GlassLewis
 from ballotdownload import MeetingBallotDownload
 from ballotsheetdownload import MeetingPDFBallotDownload
 
-
 if __name__ == '__main__':
 
     #################################################################################
@@ -16,56 +15,66 @@ if __name__ == '__main__':
 
     for i in INST_ID:
         MeetingListDownload(i).meeting_list_download()
-        Rename('C:/Users/bpaur/Downloads/',
+        Rename('Files original directory',
+               'Files new directory',
                i,
-               'csv').rename()
-        FileMover('C:/Users/bpaur/Downloads/',
-                  'C:/Users/bpaur/Desktop/test/',
+               'filetype').rename()
+        FileMover('cwd',
+                  'Files original directory',
+                  'Files new directory',
                   i,
-                  'csv').move_file()
+                  'filetype').move_file()
 
     #################################################################################
     ##### Creates folders based on company names in file defined ####################
     #################################################################################
 
-    # FolderCreator('PET8C.csv',
-    #               'C:/Users/bpaur/Desktop/test/').write_folder()
+    a = FolderCreator('file to read from',
+                  'Files original directory')
+    a.logger()
+    a.write_folder()
 
     #################################################################################
     ##### Downloads Glass Lewis research and saves in correct folder ################
     #################################################################################
 
-    # b = GlassLewis('C:/Users/bpaur/Downloads/',
-    #                'C:/Users/bpaur/Desktop/test/',
-    #                'PET8C.csv')
-    #
-    # b.ISIN_to_list()
-    # b.data_frames()
-    # b.pull_down_reports()
+    b = GlassLewis('Files original directory',
+                   'Files new directory',
+                   'file to read from',
+                   [],
+                   'placeholder dataframe')
+
+    b.logger()
+    b.ISIN_to_list()
+    b.data_frames()
+    b.pull_down_reports()
 
     #################################################################################
     ##### Downloads ProxyEdge ballot and saves in correct folder ####################
     #################################################################################
 
-    # c = MeetingBallotDownload('PET8C',
-    #                           'C:/Users/bpaur/Downloads/',
-    #                           'C:/Users/bpaur/Desktop/test/')
-    #
-    # c.comp_name_to_list()
-    # c.data_frames()
-    # c.meeting_ballot_download()
+    c = MeetingBallotDownload('Institution ID',
+                              'Files original directory',
+                              'Files new directory',
+                              [],
+                              'placeholder dataframe')
+
+    c.logger()
+    c.comp_name_to_list()
+    c.data_frames()
+    c.meeting_ballot_download()
 
     #################################################################################
     ##### Downloads ProxyEdge pdf ballot and saves in correct folder ################
     #################################################################################
 
-    # d = MeetingPDFBallotDownload('PET8C',
-    #                                'C:/Users/bpaur/Downloads/',
-    #                                'C:/Users/bpaur/Desktop/test/')
-    #
-    # d.comp_name_to_list()
-    # d.data_frames()
-    # d.meeting_voted_ballot_download()
+    d = MeetingPDFBallotDownload('Institution ID',
+                                 'Files original directory',
+                                 'Files new directory',
+                                 [],
+                                 'placeholder dataframe')
 
-
-
+    d.logger()
+    d.comp_name_to_list()
+    d.data_frames()
+    d.meeting_voted_ballot_download()
