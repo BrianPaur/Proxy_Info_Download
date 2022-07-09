@@ -18,4 +18,6 @@ To Do:
   - enables other users to use code easier
 - update code to check for meetings before running
   - seperate out functions so that they only complete one item 
+- remove hard coded PATHs
+  - research ways to do this
 - update logging to be more efficient 
